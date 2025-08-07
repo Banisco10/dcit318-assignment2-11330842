@@ -69,6 +69,27 @@ public class Rectangle: Shape
 }
 
 
+public interface IMovable
+{
+    void Move();
+}
+
+public class Car: IMovable
+{
+    public void Move()
+    {
+        Console.WriteLine("Car is moving");
+    }
+}
+
+public class Bicycle: IMovable
+{
+    public void Move()
+    {
+        Console.WriteLine("Bicycle is moving");
+    }
+}
+
 
 namespace DCIT_318_ASSIGNMENT2
 {
@@ -92,6 +113,14 @@ namespace DCIT_318_ASSIGNMENT2
 
             Console.WriteLine($"Circle Area: {circle.GetArea():F2}");
             Console.WriteLine($"Rectangle Area: {rectangle.GetArea():F2}");
+
+            Console.WriteLine("\nInterfaces");
+            IMovable car = new Car();
+            IMovable bicycle = new Bicycle();
+
+            car.Move();
+            bicycle.Move();
+
 
         }
     }
